@@ -1,0 +1,434 @@
+<html>
+<head>
+<!--<meta name="viewport" content="HTML,CSS,XML,JavaScript" /> -->
+<!--<link rel="stylesheet" href="jquery.mobile-1.1.0.min.css" /> -->
+<!-- <script src="jquery-1.7.1.min.js"></script> -->
+<!-- <script src="jquery.mobile-1.1.0.min.js"></script> -->
+
+<link rel="stylesheet" href="jquery.mobile-1.0rc2.css" />
+<script src="jquery-1.6.4.js"></script>
+<script src="jquery.mobile-1.0rc2.js"></script> 
+<script src="webworks.js"></script>
+<script type="text/javascript">
+      function doApp()
+	  {
+  
+		try {
+				var output = "<html><head></head>";
+				output += "<body><h2>Author Information:</h2><hr/><br/>";
+				output += "<table border='1'>";
+				output += "<tr><td><b>Author:</b></td>"+"<td><b>" + blackberry.app.author + "</b></td></tr>" ;
+				output += "<tr><td><b>AuthorEmail:</b></td>"+"<td><b>" + blackberry.app.authorEmail  + "</b></td></tr>" ;
+				output += "<tr><td><b>AuthorURL:</b></td>"+"<td><b>" + blackberry.app.authorURL  + "</b></td></tr>" ;
+				output += "<tr><td><b>copyright:</b></td>"+"<td><b>" + blackberry.app.copyright  + "</b></td></tr>" ;
+				output += "<tr><td><b>Description:</b></td>"+"<td><b>" + blackberry.app.description  + "</b></td></tr>" ;
+				output += "<tr><td><b>id:</b></td>"+"<td><b>" + blackberry.app.id  + "</b></td></tr>" ;
+				output += "<tr><td><b>Name:</b></td>"+"<td><b>" + blackberry.app.name + "</b></td></tr>";
+				output += "<tr><td><b>Version:</b></td>"+"<td><b>" + blackberry.app.version + "</b></td></tr>";
+				output += "<tr><td><b>License:</b></td>"+"<td><b>" + blackberry.app.license + "</b></td></tr>";
+				output += "<tr><td><b>LicenseURL:</b></td>"+"<td><b>" + blackberry.app.licenseURL + "</b></td></tr>";
+				output += "<tr><td colspan='2' align = 'center'><a href='index.htm'>Go Back</a></td></tr>";
+				output += "</table></body></html>";
+				document.write(output);
+			
+			} //end try
+		
+		catch(err) {
+			alert("Exception in displayDetails: " + err);
+			} //end catch
+	
+	}
+	
+	function doSystem()
+	{
+		try{
+			
+			if (blackberry.system.hasCapability("location.gps")) {
+				alert("This Device has a GPS.");
+			}
+			else{
+				alert("This Device doesn't have GPS service.");
+			}
+			
+			if(blackberry.system.hasCapability("media.audio.capture")){
+				alert("This Device has a media-audio-capture");
+			}
+			else{
+				alert("This Device doesn't have media-audio-capture");
+			}
+			
+			if(blackberry.system.hasCapability("media.video.capture")){
+				alert("This Device has a media-video-capture");
+			}
+			else{
+				alert("This Device doesn't have media-video-capture");
+			}
+			
+			if(blackberry.system.hasCapability("media.recording")){
+				alert("This Device has a media.recording");
+			}
+			else{
+				alert("This Device doesn't have media.recording");
+			}
+			
+			if(blackberry.system.hasCapability("network.bluetooth")){
+				alert("This Device has a network.bluetooth");
+			}
+			else{
+				alert("This Device doesn't have network.bluetooth");
+			}
+			
+			if(blackberry.system.hasCapability("input.keyboard.issuretype")){
+			
+				alert("This Device has a keyboards.issuretype");
+			}
+			else{
+			
+				alert("This Device doesn't have keyboards.issuretype");
+			
+			}
+			
+			if(blackberry.system.hasCapability("network.wlan")){
+				alert("This Device has a network.wlan");
+			}
+			else{
+				alert("This Device doesn't have network.wlan");
+			}
+			
+			if(blackberry.system.hasCapability("network.3gpp")){
+				alert("This Device has a network.3gpp");
+			}
+			else{
+				alert("This Device doesn't have network.3gpp");
+			}
+			
+			if(blackberry.system.hasCapability("network.cdma")){
+				alert("This Device has a network.cdma");
+			}
+			else{
+				alert("This Device doesn't have network.cdma");
+			}
+						
+			if(blackberry.system.hasCapability("storage.memorycard")){
+				alert("This Device has a storage.memorycard");
+			}
+			else{
+				alert("This Device doesn't have storage.memorycard");
+			}
+			
+			
+		}
+		
+		catch(err){
+		
+			alert("Exception in displayDetails: " + err);
+		}
+		
+	
+	}
+	
+	function doSystemPermission(){
+		try{
+		
+			// haspermission 
+			if(blackberry.system.hasPermission("blackberry.invoke")){
+				alert("This Device has a blackberry.invoke permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.invoke permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.system")){
+				alert("This Device has a blackberry.system permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.system permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.app")){
+				alert("This Device has a blackberry.app permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.app permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.app.event")){
+				alert("This Device has a blackberry.app.event permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.app.event permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.system.event")){
+				alert("This Device has a blackberry.system.event permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.system.event permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.ui.dialog")){
+				alert("This Device has a blackberry.ui.dialog permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.ui.dialog permission");
+			}
+			
+			if(blackberry.system.hasPermission("blackberry.utils")){
+				alert("This Device has a blackberry.utils permission");
+			}
+			else{
+				alert("This Device doesn't have blackberry.utils permission");
+			}
+		}
+		catch(err){
+		
+			alert("Exception in displayDetails: " + err);
+		}
+	}
+	
+	function doIdentity(){
+		try{
+				
+				alert("Identity is :" + blackberry.identity.uuid);
+			
+			
+		}
+		catch(err){
+			alert("Exception in displayDetails:" + err);
+		}
+	
+	}
+	
+	function doInvoke(){
+	
+		try{
+			var args = new blackberry.invoke.BrowserArguments('http://www.blackberry.com');
+			blackberry.invoke.invoke(blackberry.invoke.APP_BROWSER, args);
+		
+		}
+		catch(err){
+			alert("Exception in displayDetails: " + err);
+		}
+	
+	}
+	
+	function doConection(){
+		try{
+			//alert("Connection Type:" + blackberry.connection.type); // returns 1
+			if(blackberry.connection.type == blackberry.connection.BB){
+				alert("My Connection Type :" + "BB");
+			}
+			else if(blackberry.connection.type == blackberry.connection.WIFI){
+				alert("My Connection Type :" + "WIFI");
+			}
+			else if(blackberry.connection.type == blackberry.connection.BLUETOOTH_DUN){
+				alert("My Connection Type :" + "BLUETOOTH_DUN");
+			}
+			else if(blackberry.connection.type == blackberry.connection.CELLULAR){
+				alert("My Connection Type :" + "CELLULAR");
+			}
+			else if(blackberry.connection.type == blackberry.connection.NONE){
+				alert("My Connection Type :" + "NONE");
+			}
+			else if(blackberry.connection.type == blackberry.connection.UNKNOWN){
+				alert("My Connection Type :" + "UNKNOWN");
+			}
+			else if(blackberry.connection.type == blackberry.connection.USB){
+				alert("My Connection Type :" + "USB");
+			}
+			else if(blackberry.connection.type == blackberry.connection.VPN){
+				alert("My Connection Type :" + "VPN");
+			}
+			else if(blackberry.connection.type == blackberry.connection.ETHERNET){
+				alert("My Connection Type :" + "ETHERNET");
+			}
+			/*alert("Connection BB :" + blackberry.connection.BB); // returns 6
+			alert("Connection BLUETOOTH_DUN :" + blackberry.connection.BLUETOOTH_DUN); // returns 3
+			alert("Connection CELLULAR :" + blackberry.connection.CELLULAR); // returns 7
+			alert("Connection ETHERNET :" + blackberry.connection.ETHERNET); // returns 1
+			alert("Connection NONE :" + blackberry.connection.NONE); // returns 8
+			alert("Connection UNKNOWN :" + blackberry.connection.UNKNOWN); //returns 0
+			alert("Connection USB :" + blackberry.connection.USB); //returns 4
+			alert("Connection VPN :" + blackberry.connection.VPN); //returns 5
+			alert("Connection WIFI :" + blackberry.connection.WIFI); //returns 2 */
+		}
+		catch(err){
+			alert("Exception in displayDetails: " + err);
+		}
+	}
+	
+	function doCustomdialog(){
+		try {
+			var buttons = ["Yes", "No", "Sometimes", "N/A"];
+			var ops = {title : "Choose the answer that describes you best", size : blackberry.ui.dialog.SIZE_MEDIUM, position : blackberry.ui.dialog.CENTER};
+			blackberry.ui.dialog.customAskAsync("Do you routinely work out?", buttons, CustomdialogCallBack, ops);
+			
+		} 
+		catch(e) {
+			alert("Exception in customDialog: " + e);
+		}
+	
+	}
+	
+	function CustomdialogCallBack(index){
+			if(index == 0){
+				alert("You choose YES button");
+			}
+			else if(index == 1){
+				alert("You choose NO button");
+			}
+			else if(index == 2){
+				alert("You choose Sometimes");
+			}
+			else if(index == 3){
+				alert("You choose N/A")
+			}
+	}
+	
+	function doStandardDialog() {
+		try {
+			//blackberry.ui.dialog.SIZE_SMALL for small size popup window.
+			blackberry.ui.dialog.standardAskAsync("Save?", blackberry.ui.dialog.D_SAVE, StandarddialogCallBack, {title : "Save Dialog", size: blackberry.ui.dialog.SIZE_MEDIUM, position : blackberry.ui.dialog.CENTER});
+		}catch (e) {
+			alert("Exception in standardDialog: " + e);
+		}
+	}
+	
+	function StandarddialogCallBack(index){
+			if(index == 0){
+				alert("You choose Save button");
+			}
+			else if(index == 1){
+				alert("You choose discard button");
+			}
+	}
+	function doEvent(){
+		try{
+		
+		}
+		catch(e){
+			alert("Exception in event: " + e);
+		}
+		
+	
+	}
+	
+		
+	function doPauseEvent() {
+			alert("Registered Pause Event");
+			blackberry.event.addEventListener("pause", onPause);
+	}
+	
+	function onPause() {
+			alert("The app is about to be paused.");
+	}
+	
+	
+	function doResumeEvent() {
+			alert("Registered Resume Event");
+			blackberry.event.addEventListener("resume", onResume);
+	}
+	
+	function onResume() {
+			alert("Now it is going to its original state-Resume.");
+	}
+	  
+	 
+</script>
+
+
+</head>
+<body>
+
+ <!--<div data-role="page">
+
+	<div data-role="header">
+		<h1>BBDevice Demo Application </h1>
+	</div> 
+
+	<div data-role="content">	
+		<p>Hello Mr. Priyansh</p>		
+		<p><b> Researh In Motion[RIM] </b></p> -->
+		
+		
+		<section id="internalPage" data-role="page">
+			<header data-role="header"> RIM BB10 APP </header>
+			<div data-role="header"> <h2>BBDevice Demo Application with jQuery Stuff- Priyansh@RIM</h2></div>
+			<div data-role="content">
+			
+						<!-- Transition effect : fade,flip,pop,slide,slideup -->
+				<p><a href="externalpage1.htm" data-transition="slidedown">Click on external page-1</a></p>
+				<p><a href="#dialogpage" data-rel="dialog">Click on external page-2</a></p>
+				<hr/>
+				<p align = "center">
+				<table border='1'>
+					<tr>
+					<td><b>Populate the App:</b></td>
+					<td align = "center"><input type="button" onclick="doApp();" value="Populate - APP"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate System Capability:</b></td>
+					<td><input type="button" onclick="doSystem();" value="Populate - System Capability"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - System Permission:</b></td>
+					<td><input type="button" onclick="doSystemPermission();" value="Populate - System Permission"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - Identity:</b></td>
+					<td align = "center"><input type="button" onclick="doIdentity();" value="Populate - Identity"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - Invoke:</b></td>
+					<td align = "center"><input type="button" onclick="doInvoke();" value="Populate - Invoke"/></td>
+					</tr> 
+					<tr>
+					<td><b>Populate - Connection:</b></td>
+					<td align = "center"><input type="button" onclick="doConection();" value="Populate - Connection"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - CustomDialog</b></td>
+					<td align = "center"><input type="button" onclick="doCustomdialog();" value="Populate - CustomDialog"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - StandardDialog</b></td>
+					<td align = "center"><input type="button" onclick="doStandardDialog();" value="Populate - StandardDialog"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - PauseEvent:</b></td>
+					<td align = "center"><input type="button" onclick="doPauseEvent();" value="Populate - PauseEvent"/></td>
+					</tr>
+					<tr>
+					<td><b>Populate - ResumeEvent:</b></td>
+					<td align = "center"><input type="button" onclick="doResumeEvent();" value="Populate - ResumeEvent"/></td>
+					</tr>
+		
+				</table>
+				</p>	
+			</div>
+				<div data-role="footer"> <h2>@All Right Researved, Research In Motion</h2></div>
+		</section>
+		
+		<div id="dialogpage" data-role="page">
+			<div data-role="header">
+				<h1>Dialog Title</h1>
+			</div>
+
+			<div data-role="content">
+				<p> This is a my dialogbox content. </p>
+				<p> All dialoge related details must be wrote down here </p>
+			</div>
+			<div data-role="footer">
+				<h2>Dialog footer</h2>
+			</div>
+		</div>	
+		
+	<!--</div>  <!-- /content
+		
+
+ </div><!-- /page -->
+
+
+
+</body>
+</html> 
